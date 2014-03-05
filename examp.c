@@ -2,13 +2,11 @@
 #include<stdlib.h>
 #include<unistd.h>
 #include<sys/wait.h>
-
+/*  管道、进程和execl的练习*/
 int main()
 {
     pid_t id1,id2;
     int pip[2];
-    char* arg1[]={"/bin/ls","ls","-l",NULL};
-    char* arg2[]={"/bin/grep","grep","examp.c",NULL};
     if(pipe(pip)==-1)
     {
         printf("error pipe!!\n");
@@ -20,7 +18,7 @@ int main()
         close(1);
         dup(pip[1]);
         close(pip[1]);
-        execl("/bin/ls","ls","-l",NULL);
+        execl("/bin/ls","ls",NULL);
         printf("ls is running!\n");
     }
 //    close(pip[1]);

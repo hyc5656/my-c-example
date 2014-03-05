@@ -1,3 +1,4 @@
+//单链表逆置
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
@@ -25,10 +26,8 @@ linklist init()
     }
     return l;
 }
-
-int main()
+void reverse(linklist l)
 {
-    linklist l=init();
     Lnode *p,*q=NULL;
     p=l;
     l=NULL;
@@ -41,6 +40,11 @@ int main()
         q->next=l;
         l=q;
     }
+}
+int main()
+{
+    linklist l=init();
+    reverse(l);
     printf("倒置后:\n");
     while(l)
     {

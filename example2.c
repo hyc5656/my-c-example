@@ -1,3 +1,4 @@
+//直接插入排序
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
@@ -14,12 +15,6 @@ seqlist* seq_init()
     seqlist* l=(seqlist*)malloc(sizeof(seqlist));
     l->last=-1;
     return l;
-}
-
-void seq_append(seqlist* l)
-{
-    srand(time(NULL));
-    l->data[++l->last]=rand()%150;
 }
 
 void part(seqlist* l)
