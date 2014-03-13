@@ -1,3 +1,4 @@
+//插入或查找函数，不带数组长度
 #include<stdio.h>
 #include<stdlib.h>
 
